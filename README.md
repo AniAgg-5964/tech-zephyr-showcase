@@ -1,73 +1,52 @@
-# Welcome to your Lovable project
+# 🌐 TechZephyr Showcase
 
-## Project info
+**TechZephyr — Replicate & Innovate** is a modern showcase website built with **React + TypeScript**, featuring interactive demos, a hero section, striking effects, customer highlights, and a futuristic animated background that reflects the innovative spirit of the Zephyr RTOS ecosystem.
 
-**URL**: https://lovable.dev/projects/0494d35e-6ee9-425f-b1c6-690460aab398
+---
 
-## How can I edit this code?
+## ✨ Features
 
-There are several ways of editing your application.
+- 🦸 **Hero Section** – Bold intro with gradient effects and smooth animations.  
+- 🎨 **Interactive Background** – Dynamic floating tech objects, gradient hover animations, ripple effects.  
+- ⚡ **Striking Effect** – Random IoT/tech-themed objects drifting and bouncing on hover.  
+- 🧩 **Project Gallery** – Grid of Zephyr RTOS-powered projects with hover transitions.  
+- 🎥 **See It in Action** – Live demos and previews of projects in action.  
+- 💬 **Customer Section** – Testimonials in grid/carousel style, hover animations, dark theme styling.  
+- 🚀 **Performance-Oriented** – Lightweight animations with Canvas/SVG, optimized React + TypeScript components.  
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0494d35e-6ee9-425f-b1c6-690460aab398) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+Framework: Next.js (React + TypeScript)
 
-**Use your preferred IDE**
+Styling: Tailwind CSS
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Animations: Canvas API / Framer Motion
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Deployment: Vercel
 
-Follow these steps:
+This project was built with the help of:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## ❤️ Lovable
+ – AI-powered design & coding support.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## ⚡ Bolt
+ – for rapid prototyping & scaffolding.
 
-# Step 3: Install the necessary dependencies.
-npm i
+🤖 ChatGPT (OpenAI) – for coding, animations, and documentation.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+These tools were instrumental in shaping TechZephyr Showcase.
+
+## 🚀 Getting Started
+
+```bash
+# 1. Clone the Repository
+git clone https://github.com/your-username/tech-zephyr-showcase.git
+cd tech-zephyr-showcase
+
+# 2. Install Dependencies
+npm install
+
+# 3. Run Development Server
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/0494d35e-6ee9-425f-b1c6-690460aab398) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
