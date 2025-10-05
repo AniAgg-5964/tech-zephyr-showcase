@@ -4,6 +4,8 @@ import { Hero } from "@/components/Hero";
 import { Gallery } from "@/components/Gallery";
 import { VideoSection } from "@/components/VideoSection";
 import { CTASection } from "@/components/CTASection";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useParallax } from "@/hooks/useParallax";
 
 /*
   TechZephyr Landing Page
@@ -21,6 +23,10 @@ import { CTASection } from "@/components/CTASection";
 */
 
 const Index = () => {
+  // Initialize scroll-based animations
+  useScrollReveal();
+  useParallax();
+
   return (
     <div className="min-h-screen w-full">
       {/* Scroll Progress Bar */}

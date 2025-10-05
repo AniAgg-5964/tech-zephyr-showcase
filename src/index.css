@@ -177,4 +177,69 @@ All colors MUST be HSL.
   .skeleton {
     @apply animate-pulse bg-muted rounded;
   }
+  
+  /* Ripple effect */
+  .ripple {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: hsl(var(--primary) / 0.3);
+    transform: translate(-50%, -50%);
+    animation: ripple-animation 0.6s ease-out;
+  }
+  
+  @keyframes ripple-animation {
+    to {
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+    }
+  }
+  
+  /* Parallax effect */
+  .parallax {
+    will-change: transform;
+  }
+  
+  /* Scroll reveal animations */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Text shimmer effect */
+  .text-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--primary-glow)) 50%,
+      hsl(var(--primary)) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+  
+  @keyframes shimmer {
+    to {
+      background-position: 200% center;
+    }
+  }
 }

@@ -20,7 +20,7 @@ export const VideoSection = () => {
     >
       <div className="container mx-auto max-w-5xl">
         {/* Section Header */}
-        <div className="text-center mb-12 animate-fade-in">
+        <div className="text-center mb-12 scroll-reveal">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             See It In{" "}
             <span className="bg-gradient-tech bg-clip-text text-transparent">
@@ -33,7 +33,7 @@ export const VideoSection = () => {
         </div>
 
         {/* Video Container */}
-        <div className="relative rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-shadow duration-300 bg-card animate-fade-in-up">
+        <div className="relative rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-shadow duration-300 bg-card scroll-reveal">
           {/* Skeleton loader */}
           {!isLoaded && (
             <div className="absolute inset-0 skeleton flex items-center justify-center">

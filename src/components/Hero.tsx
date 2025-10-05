@@ -41,7 +41,7 @@ export const Hero = () => {
       aria-label="Hero section"
     >
       {/* Video Background - using poster as fallback */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 parallax" data-speed="0.3">
         <img
           src={heroPoster}
           alt="Tech workspace with holographic displays"

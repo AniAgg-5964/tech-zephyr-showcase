@@ -1,0 +1,30 @@
+import { useEffect } from 'react';
+
+/**
+ * Custom hook for scroll-based reveal animations
+ * Adds 'revealed' class to elements with 'scroll-reveal' class when they enter viewport
+ */
+export const useScrollReveal = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      }
+    );
+
+    const elements = document.querySelectorAll('.scroll-reveal');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+};
