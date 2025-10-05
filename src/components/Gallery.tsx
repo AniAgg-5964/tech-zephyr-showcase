@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRipple } from "@/hooks/useRipple";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 import gallery1 from "@/assets/gallery1.jpg";
 import gallery2 from "@/assets/gallery2.jpg";
 import gallery3 from "@/assets/gallery3.jpg";
@@ -105,7 +106,7 @@ export const Gallery = () => {
       className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-subtle relative overflow-hidden"
       aria-label="Project gallery"
     >
-      <div className="hover-effect-container" />
+      <AnimatedBackground objectCount={12} />
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-12 scroll-reveal">

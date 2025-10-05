@@ -247,90 +247,10 @@ All colors MUST be HSL.
     }
   }
 
-  /* Abstract hover effect for sections */
-  .hover-effect-container {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 0;
-  }
-
-  .hover-effect-container::before,
-  .hover-effect-container::after {
-    content: '';
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-    background: radial-gradient(
-      circle,
-      hsl(var(--primary) / 0.08) 0%,
-      hsl(var(--primary) / 0.04) 30%,
-      transparent 70%
-    );
-    transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0;
-  }
-
-  .dark .hover-effect-container::before,
-  .dark .hover-effect-container::after {
-    background: radial-gradient(
-      circle,
-      hsl(var(--primary) / 0.12) 0%,
-      hsl(var(--primary) / 0.06) 30%,
-      transparent 70%
-    );
-  }
-
-  .hover-effect-container::before {
-    top: -300px;
-    left: -300px;
-    animation: float-1 20s ease-in-out infinite;
-  }
-
-  .hover-effect-container::after {
-    bottom: -300px;
-    right: -300px;
-    animation: float-2 25s ease-in-out infinite;
-  }
-
-  section:hover .hover-effect-container::before,
-  section:hover .hover-effect-container::after {
-    opacity: 1;
-  }
-
-  @keyframes float-1 {
-    0%, 100% {
-      transform: translate(0, 0) rotate(0deg) scale(1);
-      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-    }
-    25% {
-      transform: translate(100px, 50px) rotate(90deg) scale(1.1);
-      border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
-    }
-    50% {
-      transform: translate(50px, 100px) rotate(180deg) scale(0.9);
-      border-radius: 30% 70% 60% 40% / 60% 40% 50% 60%;
-    }
-    75% {
-      transform: translate(-50px, 50px) rotate(270deg) scale(1.05);
-      border-radius: 70% 30% 40% 60% / 40% 60% 50% 40%;
-    }
-  }
-
-  @keyframes float-2 {
-    0%, 100% {
-      transform: translate(0, 0) rotate(0deg) scale(1);
-      border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
-    }
-    33% {
-      transform: translate(-80px, -60px) rotate(120deg) scale(1.15);
-      border-radius: 40% 60% 70% 30% / 60% 40% 50% 60%;
-    }
-    66% {
-      transform: translate(-60px, -100px) rotate(240deg) scale(0.95);
-      border-radius: 70% 30% 40% 60% / 40% 50% 60% 50%;
-    }
+  /* Ensure proper z-index layering for sections with animated backgrounds */
+  section > .container,
+  section > div:not(canvas) {
+    position: relative;
+    z-index: 1;
   }
 }

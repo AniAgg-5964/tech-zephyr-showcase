@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Github } from "lucide-react";
 import { useRipple } from "@/hooks/useRipple";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 
 /*
   CTA Section Component
@@ -23,7 +24,7 @@ export const CTASection = () => {
       className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-subtle relative overflow-hidden"
       aria-label="Call to action section"
     >
-      <div className="hover-effect-container" />
+      <AnimatedBackground objectCount={10} />
       <div className="container mx-auto max-w-4xl">
         <div className="bg-card rounded-3xl shadow-card overflow-hidden animate-fade-in-up">
           {/* Content */}
