@@ -15,9 +15,10 @@ export const VideoSection = () => {
   return (
     <section
       id="video"
-      className="py-20 px-4 sm:px-6 lg:px-8"
+      className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
       aria-label="Video showcase section"
     >
+      <div className="hover-effect-container" />
       <div className="container mx-auto max-w-5xl">
         {/* Section Header */}
         <div className="text-center mb-12 scroll-reveal">

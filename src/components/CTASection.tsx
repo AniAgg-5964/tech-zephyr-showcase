@@ -20,9 +20,10 @@ export const CTASection = () => {
   return (
     <section
       id="cta"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-subtle"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-subtle relative overflow-hidden"
       aria-label="Call to action section"
     >
+      <div className="hover-effect-container" />
       <div className="container mx-auto max-w-4xl">
         <div className="bg-card rounded-3xl shadow-card overflow-hidden animate-fade-in-up">
           {/* Content */}
@@ -42,10 +43,8 @@ export const CTASection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
-                onClick={(e) => {
-                  createRipple(e);
-                  handleContact("email");
-                }}
+                onClick={() => handleContact("email")}
+                onMouseEnter={createRipple}
                 size="lg"
                 className="ripple-container bg-gradient-tech hover:shadow-lg hover:scale-105 transition-all duration-300 text-white font-semibold px-8 py-6 text-lg group w-full sm:w-auto"
                 aria-label="Contact via email"
@@ -56,10 +55,8 @@ export const CTASection = () => {
               </Button>
 
               <Button
-                onClick={(e) => {
-                  createRipple(e);
-                  handleContact("github");
-                }}
+                onClick={() => handleContact("github")}
+                onMouseEnter={createRipple}
                 variant="outline"
                 size="lg"
                 className="ripple-container border-2 hover:bg-secondary hover:scale-105 transition-all duration-300 font-semibold px-8 py-6 text-lg group w-full sm:w-auto"

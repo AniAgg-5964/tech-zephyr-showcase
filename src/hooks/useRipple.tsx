@@ -2,10 +2,10 @@ import { useCallback } from "react";
 
 export const useRipple = () => {
   const createRipple = useCallback((event: React.MouseEvent<HTMLElement>) => {
-    const button = event.currentTarget;
+    const element = event.currentTarget;
     const ripple = document.createElement("span");
 
-    const rect = button.getBoundingClientRect();
+    const rect = element.getBoundingClientRect();
     const size = Math.max(rect.width, rect.height);
     const x = event.clientX - rect.left - size / 2;
     const y = event.clientY - rect.top - size / 2;
@@ -15,7 +15,7 @@ export const useRipple = () => {
     ripple.style.top = `${y}px`;
     ripple.classList.add("ripple-effect");
 
-    button.appendChild(ripple);
+    element.appendChild(ripple);
 
     setTimeout(() => {
       ripple.remove();

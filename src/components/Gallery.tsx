@@ -102,9 +102,10 @@ export const Gallery = () => {
   return (
     <section
       id="gallery"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-subtle"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-subtle relative overflow-hidden"
       aria-label="Project gallery"
     >
+      <div className="hover-effect-container" />
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-12 scroll-reveal">
@@ -128,10 +129,8 @@ export const Gallery = () => {
           {categories.map((category) => (
             <Button
               key={category}
-              onClick={(e) => {
-                createRipple(e);
-                setSelectedCategory(category);
-              }}
+              onClick={() => setSelectedCategory(category)}
+              onMouseEnter={createRipple}
               variant={selectedCategory === category ? "default" : "outline"}
               className={`ripple-container transition-smooth ${
                 selectedCategory === category
@@ -152,12 +151,9 @@ export const Gallery = () => {
           {filteredItems.map((item, index) => (
             <div
               key={item.id}
-              className={`ripple-container group relative overflow-hidden ${item.radius} bg-card shadow-card hover:shadow-xl transition-all duration-300 cursor-pointer animate-scale-in`}
+              className={`group relative overflow-hidden ${item.radius} bg-card shadow-card hover:shadow-xl transition-all duration-300 cursor-pointer animate-scale-in`}
               style={{ animationDelay: `${index * 100}ms` }}
-              onClick={(e) => {
-                createRipple(e);
-                setLightboxImage(item);
-              }}
+              onClick={() => setLightboxImage(item)}
               role="button"
               tabIndex={0}
               aria-label={`View ${item.alt} in fullscreen`}

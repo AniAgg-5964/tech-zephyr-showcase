@@ -29,8 +29,7 @@ export const Hero = () => {
     }
   }, []);
 
-  const handleCTA = (e: React.MouseEvent<HTMLButtonElement>) => {
-    createRipple(e);
+  const handleCTA = () => {
     const gallerySection = document.getElementById("gallery");
     if (gallerySection) {
       gallerySection.scrollIntoView({ behavior: "smooth" });
@@ -83,6 +82,7 @@ export const Hero = () => {
 
         <Button
           onClick={handleCTA}
+          onMouseEnter={createRipple}
           size="lg"
           className={`ripple-container bg-gradient-tech hover:shadow-lg hover:scale-105 glow-primary transition-all duration-300 text-white font-semibold px-8 py-6 text-lg group ${
             isVisible
