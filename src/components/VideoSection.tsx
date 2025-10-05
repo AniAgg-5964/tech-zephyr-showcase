@@ -23,7 +23,7 @@ export const VideoSection = () => {
         <div className="text-center mb-12 scroll-reveal">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             See It In{" "}
-            <span className="bg-gradient-tech bg-clip-text text-transparent">
+            <span className="text-primary">
               Action
             </span>
           </h2>
@@ -63,8 +63,8 @@ export const VideoSection = () => {
           </div>
 
           {/* Video Caption */}
-          <div className="p-6 bg-card">
-            <h3 className="text-xl font-semibold mb-2">Project Demonstration</h3>
+          <div className="p-6 bg-card transition-all duration-300">
+            <h3 className="text-xl font-semibold mb-2 text-foreground">Project Demonstration</h3>
             <p className="text-muted-foreground">
               A comprehensive walkthrough of our hackathon project, showcasing key
               features and innovative solutions.

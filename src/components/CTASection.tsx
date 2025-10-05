@@ -26,7 +26,7 @@ export const CTASection = () => {
           <div className="p-8 sm:p-12 lg:p-16 text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
               Ready to{" "}
-              <span className="text-shimmer font-bold">
+              <span className="text-primary font-bold">
                 Collaborate?
               </span>
             </h2>
@@ -41,7 +41,7 @@ export const CTASection = () => {
               <Button
                 onClick={() => handleContact("email")}
                 size="lg"
-                className="bg-gradient-tech hover:shadow-lg hover:scale-105 glow-primary animate-pulse-glow transition-all duration-300 text-white font-semibold px-8 py-6 text-lg group w-full sm:w-auto ripple"
+                className="bg-gradient-tech hover:shadow-lg hover:scale-105 transition-all duration-300 text-white font-semibold px-8 py-6 text-lg group w-full sm:w-auto"
                 aria-label="Contact via email"
               >
                 <Mail className="mr-2 h-5 w-5" />

@@ -68,7 +68,7 @@ export const Navbar = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-xl font-bold bg-gradient-tech bg-clip-text text-transparent hover:opacity-80 transition-smooth"
+            className="text-xl font-bold text-primary hover:opacity-80 transition-smooth"
             aria-label="TechZephyr home"
           >
             TechZephyr

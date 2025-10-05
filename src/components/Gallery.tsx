@@ -108,7 +108,7 @@ export const Gallery = () => {
         <div className="text-center mb-12 scroll-reveal">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Project{" "}
-            <span className="bg-gradient-tech bg-clip-text text-transparent">
+            <span className="text-primary">
               Gallery
             </span>
           </h2>

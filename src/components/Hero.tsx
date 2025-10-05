@@ -62,7 +62,7 @@ export const Hero = () => {
         >
           <span className="text-white">Replicate &</span>
           <br />
-          <span className="bg-gradient-tech bg-clip-text text-transparent">
+          <span className="text-primary">
             Innovate
           </span>
         </h1>
