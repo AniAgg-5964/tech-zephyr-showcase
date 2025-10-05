@@ -3,18 +3,20 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { Hero } from "@/components/Hero";
 import { Gallery } from "@/components/Gallery";
 import { VideoSection } from "@/components/VideoSection";
+import { Testimonials } from "@/components/Testimonials";
 import { CTASection } from "@/components/CTASection";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useParallax } from "@/hooks/useParallax";
 
 /*
   TechZephyr Landing Page
-  
+
   A modern, minimal tech showcase landing page featuring:
   - Video hero section with animated CTA
   - Sticky responsive navigation with dark mode
   - Filterable image gallery with lightbox
   - Embedded video showcase
+  - Customer testimonials carousel
   - Call-to-action section
   - Scroll progress indicator
   - Full accessibility (ARIA, semantic HTML, keyboard navigation)
@@ -40,6 +42,7 @@ const Index = () => {
         <Hero />
         <Gallery />
         <VideoSection />
+        <Testimonials />
         <CTASection />
       </main>
 
