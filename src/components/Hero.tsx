@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useRipple } from "@/hooks/useRipple";
 import heroPoster from "@/assets/hero-poster.jpg";
 
 /*
@@ -14,6 +15,7 @@ import heroPoster from "@/assets/hero-poster.jpg";
 export const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const createRipple = useRipple();
 
   useEffect(() => {
     // Trigger entrance animations
@@ -27,7 +29,8 @@ export const Hero = () => {
     }
   }, []);
 
-  const handleCTA = () => {
+  const handleCTA = (e: React.MouseEvent<HTMLButtonElement>) => {
+    createRipple(e);
     const gallerySection = document.getElementById("gallery");
     if (gallerySection) {
       gallerySection.scrollIntoView({ behavior: "smooth" });
@@ -81,7 +84,7 @@ export const Hero = () => {
         <Button
           onClick={handleCTA}
           size="lg"
-          className={`bg-gradient-tech hover:shadow-lg hover:scale-105 glow-primary transition-all duration-300 text-white font-semibold px-8 py-6 text-lg group ${
+          className={`ripple-container bg-gradient-tech hover:shadow-lg hover:scale-105 glow-primary transition-all duration-300 text-white font-semibold px-8 py-6 text-lg group ${
             isVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-10"

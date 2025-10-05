@@ -177,30 +177,29 @@ All colors MUST be HSL.
   .skeleton {
     @apply animate-pulse bg-muted rounded;
   }
-  
-  /* Ripple effect */
-  .ripple {
+
+  /* Ripple effect container */
+  .ripple-container {
     position: relative;
     overflow: hidden;
   }
-  
-  .ripple::after {
-    content: '';
+
+  .ripple-effect {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
     border-radius: 50%;
-    background: hsl(var(--primary) / 0.3);
-    transform: translate(-50%, -50%);
+    background: hsl(var(--primary) / 0.4);
+    transform: scale(0);
     animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
   }
-  
+
+  .dark .ripple-effect {
+    background: hsl(var(--primary) / 0.5);
+  }
+
   @keyframes ripple-animation {
     to {
-      width: 300px;
-      height: 300px;
+      transform: scale(4);
       opacity: 0;
     }
   }

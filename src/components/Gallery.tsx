@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useRipple } from "@/hooks/useRipple";
 import gallery1 from "@/assets/gallery1.jpg";
 import gallery2 from "@/assets/gallery2.jpg";
 import gallery3 from "@/assets/gallery3.jpg";
@@ -76,6 +77,7 @@ export const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [lightboxImage, setLightboxImage] = useState<GalleryItem | null>(null);
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
+  const createRipple = useRipple();
 
   const filteredItems =
     selectedCategory === "All"
@@ -126,9 +128,12 @@ export const Gallery = () => {
           {categories.map((category) => (
             <Button
               key={category}
-              onClick={() => setSelectedCategory(category)}
+              onClick={(e) => {
+                createRipple(e);
+                setSelectedCategory(category);
+              }}
               variant={selectedCategory === category ? "default" : "outline"}
-              className={`transition-smooth ${
+              className={`ripple-container transition-smooth ${
                 selectedCategory === category
                   ? "bg-primary text-primary-foreground"
                   : "hover:bg-secondary"
@@ -147,9 +152,12 @@ export const Gallery = () => {
           {filteredItems.map((item, index) => (
             <div
               key={item.id}
-              className={`group relative overflow-hidden ${item.radius} bg-card shadow-card hover:shadow-xl transition-all duration-300 cursor-pointer animate-scale-in`}
+              className={`ripple-container group relative overflow-hidden ${item.radius} bg-card shadow-card hover:shadow-xl transition-all duration-300 cursor-pointer animate-scale-in`}
               style={{ animationDelay: `${index * 100}ms` }}
-              onClick={() => setLightboxImage(item)}
+              onClick={(e) => {
+                createRipple(e);
+                setLightboxImage(item);
+              }}
               role="button"
               tabIndex={0}
               aria-label={`View ${item.alt} in fullscreen`}

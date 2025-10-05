@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Github } from "lucide-react";
+import { useRipple } from "@/hooks/useRipple";
 
 /*
   CTA Section Component
@@ -9,6 +10,8 @@ import { ArrowRight, Mail, Github } from "lucide-react";
 */
 
 export const CTASection = () => {
+  const createRipple = useRipple();
+
   const handleContact = (type: string) => {
     // In a real app, this would open email client or redirect
     console.log(`Contact via ${type}`);
@@ -39,9 +42,12 @@ export const CTASection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
-                onClick={() => handleContact("email")}
+                onClick={(e) => {
+                  createRipple(e);
+                  handleContact("email");
+                }}
                 size="lg"
-                className="bg-gradient-tech hover:shadow-lg hover:scale-105 transition-all duration-300 text-white font-semibold px-8 py-6 text-lg group w-full sm:w-auto"
+                className="ripple-container bg-gradient-tech hover:shadow-lg hover:scale-105 transition-all duration-300 text-white font-semibold px-8 py-6 text-lg group w-full sm:w-auto"
                 aria-label="Contact via email"
               >
                 <Mail className="mr-2 h-5 w-5" />
@@ -50,10 +56,13 @@ export const CTASection = () => {
               </Button>
 
               <Button
-                onClick={() => handleContact("github")}
+                onClick={(e) => {
+                  createRipple(e);
+                  handleContact("github");
+                }}
                 variant="outline"
                 size="lg"
-                className="border-2 hover:bg-secondary hover:scale-105 transition-all duration-300 font-semibold px-8 py-6 text-lg group w-full sm:w-auto"
+                className="ripple-container border-2 hover:bg-secondary hover:scale-105 transition-all duration-300 font-semibold px-8 py-6 text-lg group w-full sm:w-auto"
                 aria-label="View GitHub profile"
               >
                 <Github className="mr-2 h-5 w-5" />
