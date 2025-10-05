@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import Datacharts from "./datacharts"; // Note: changed component name to match file
+
 
 
 const queryClient = new QueryClient();
@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <DataCharts />
+      
       <TooltipProvider>
         <Toaster />
         <Sonner />
